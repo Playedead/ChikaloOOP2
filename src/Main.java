@@ -1,21 +1,18 @@
+import Transport.Bicycle;
+import Transport.Car;
+import Transport.Transport;
+import Transport.Truck;
+
 public class Main {
   public static void main(String[] args) {
-    Car car = new Car("carOne", 4);
-    Car car2 = new Car("carTwo", 4);
+    Bicycle bicycle = new Bicycle("bicycle1");
+    Car car = new Car("BMW");
+    Truck truck = new Truck("Volvo", 10);
 
-    Truck truck = new Truck("truckOne", 6);
-    Truck truck1 = new Truck("truckTwo", 10);
+    Transport[] transports = new Transport[]{bicycle, car, truck};
+    for (Transport transport : transports) {
+      transport.check();
 
-    Bicycle bicycle = new Bicycle("bicycleOne", 2);
-    Bicycle bicycle1 = new Bicycle("bycicleTwo", 3);
-
-    ServiceStation station = new ServiceStation();
-    station.check(car);
-    station.check(car2);
-    station.check(truck);
-    station.check(truck1);
-    station.check(bicycle);
-    station.check(bicycle1);
-
+    }
   }
 }
